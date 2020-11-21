@@ -1,7 +1,8 @@
 # Load package
 pacman::p_load("tidyverse")
 
-# Read in the dataset and sort by fuzzy matching into four groups
+# Read in the dataset and sort by pattern matching into five groups
+# vehicle, human, rubber duck, other, and NA (for missing data)
 # Can also try 'agrepl' for fuzzy pattern matching, but I've had limited success with it
 dat <- read_csv("data/toy_dataset.csv")  %>%
   dplyr::mutate(description = tolower(description)) %>% # makes everything lower case
