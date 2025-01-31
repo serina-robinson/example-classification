@@ -82,11 +82,12 @@ plot <- ggplot(ctest) +
   ggplot2::labs(x = "Dimension 1", y = "Dimension 2")
 plot
 #save plot
-ggsave("output/plots/procrustes.jpg",
+ggsave("plots/procrustes.jpg",
        dpi = 300,
        device = "jpeg",
        units = "cm",
        width = 75/2,
        height = (75/2)/1.5)
 #statistical test
-stat_test <- protest(X = tax_pcoa$vectors, Y = arg_pcoa$vectors, scores = "sites", permutations = 999)
+stat_test <- protest(X = bf_pcoa$vectors, Y = ko_pcoa$vectors, scores = "sites", permutations = 999)
+stat_test
